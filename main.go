@@ -38,7 +38,7 @@ var bucketInfo minio.BucketInfo
 
 //帮助信息
 const help = `
-    下载文件: minioPerfect dl bucketname objectname
+    下载文件: minioPerfect dl bucketname objectname path
     上传文件：minioPerfect put bucketname objectname
     创建桶  ：minioPerfect mb bucketname
     桶列表  ：minioPerfect ls

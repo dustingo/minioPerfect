@@ -1,10 +1,26 @@
 #### minio 配置和golang api集成文档
+> minio说明
+```text
+MinIO is a High Performance Object Storage released under Apache License v2.0.
+It is API compatible with Amazon S3 cloud storage service. 
+Use MinIO to build high performance infrastructure for machine learning, analytics and application data workloads.
+更多的minio信息可以查阅官网：
+https://min.io/
+```
+> minioPerfect
+```text
+minioPerfect是一个自建minio server的客户端，根据官方golang api选择基本功能组合而来。
+只提供常用的客户端基本操作功能。
+官方完整客户端mc下载链接如下：
+https://dl.min.io/client/mc/release/linux-amd64/mc
+minio server是个人所设想的服务器初始化系统化重要的一环，它具有部署便捷，高性能，文档丰富等优点，
+最重要的是不仅可以实现资源集中管理，又可以解决初始化时重复拷贝的问题。
+```
 > minio启动
 ```shell script
 #下载服务器端
 wget https://dl.min.io/server/minio/release/darwin-amd64/minio
-#下载官方客户端
-wget https://dl.min.io/client/mc/release/linux-amd64/mc
+
 #设置MINIO_ROOT_USER 和 MINIO_ROOT_PASSWORD
 vim /etc/profile
 export MINIO_ROOT_USER=minio
@@ -14,7 +30,7 @@ minio server --address ip:port data_path
 ```
 > 自定义api功能
 ```text
-下载文件: minioPerfect dl bucketname objectname
+下载文件: minioPerfect dl bucketname objectname path
 上传文件：minioPerfect put bucketname objectname
 创建桶  ：minioPerfect mb bucketname
 桶列表  ：minioPerfect ls
