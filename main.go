@@ -160,8 +160,8 @@ func (p *perfectMinio) ls(client *minio.Client) {
 func main() {
 
 	// init client
-	minioClient, err := minio.New("10.133.39.14:9876", &minio.Options{
-		Creds:  credentials.NewStaticV4("minio", "fzrjocr7xJAcrxdovq1_", ""),
+	minioClient, err := minio.New("ip:port", &minio.Options{
+		Creds:  credentials.NewStaticV4("minio", "key", ""),
 		Secure: false,
 	})
 	if err != nil {
